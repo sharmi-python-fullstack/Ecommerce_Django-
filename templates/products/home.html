@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}VegFruit Store - Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Fresh Vegetables & Fruits</h1>
+    <p>Get farm-fresh vegetables, juicy fruits, exotic varieties, organic produce and more delivered straight to your doorstep. Quality you can trust!</p>
+    <a href="{% url 'products:product_list' %}" class="btn btn-yellow">🛒 Shop Now</a>
+    <a href="#categories" class="btn btn-primary">Browse Categories</a>
+</section>
+
+<div class="container">
+    <!-- Categories -->
+    <section id="categories">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="category-grid">
+            {% for cat in categories %}
+            <a href="{% url 'products:category_products' cat.slug %}" class="category-card">
+                <div class="category-icon">
+                    {% if 'vegetable' in cat.slug %}🥕
+                    {% elif 'fruit' in cat.slug %}🍎
+                    {% elif 'exotic' in cat.slug %}🥝
+                    {% elif 'leafy' in cat.slug %}🥬
+                    {% elif 'sprout' in cat.slug %}🌱
+                    {% elif 'organic' in cat.slug %}🌿
+                    {% elif 'seasonal' in cat.slug %}🍂
+                    {% elif 'frozen' in cat.slug %}🧊
+                    {% else %}🛒{% endif %}
+                </div>
+                <h3>{{ cat.name }}</h3>
+                <p>{{ cat.products.count }} items</p>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section>
+        <h2 class="section-title">Featured Products</h2>
+        <div class="product-grid">
+            {% for product in featured_products %}
+            <div class="product-card">
+                <div class="product-image">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                        {% if 'vegetable' in product.category.slug %}🥕
+                        {% elif 'fruit' in product.category.slug %}🍎
+                        {% elif 'exotic' in product.category.slug %}🥝
+                        {% elif 'leafy' in product.category.slug %}🥬
+                        {% elif 'sprout' in product.category.slug %}🌱
+                        {% elif 'organic' in product.category.slug %}🌿
+                        {% elif 'seasonal' in product.category.slug %}🍂
+                        {% elif 'frozen' in product.category.slug %}🧊
+                        {% else %}🛒{% endif %}
+                    {% endif %}
+                </div>
+                <div class="product-info">
+                    <span class="product-category">{{ product.category.name }}</span>
+                    <h3 class="product-name">
+                        {{ product.name }}
+                        {% if product.is_organic %}<span class="organic-badge">Organic</span>{% endif %}
+                    </h3>
+                    <div class="product-price">₹{{ product.price }} <span class="unit">/ {{ product.unit }}</span></div>
+                    <form action="{% url 'cart:add_to_cart' product.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" class="btn btn-primary btn-block">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}

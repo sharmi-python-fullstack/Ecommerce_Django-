@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Register - VegFruit Store{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <h2>Create Account</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-group">
+            <label>{{ field.label }}</label>
+            {{ field }}
+            {% if field.help_text %}
+                <small style="color: #888; display: block;">{{ field.help_text }}</small>
+            {% endif %}
+            {% if field.errors %}
+                <small style="color: var(--danger);">{{ field.errors.0 }}</small>
+            {% endif %}
+        </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-purple">Register</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'accounts:login' %}">Login here</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Checkout - VegFruit Store{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="section-title">Checkout</h2>
+
+    <form method="post" id="checkout-form">
+        {% csrf_token %}
+        <div class="checkout-wrapper">
+            <!-- Left: Address + Payment -->
+            <div>
+                <!-- Items -->
+                <div class="checkout-section">
+                    <h3>Order Items ({{ cart_items|length }})</h3>
+                    {% for item in cart_items %}
+                    <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--gray-light);">
+                        <span>{{ item.product.name }} x {{ item.quantity }}</span>
+                        <span style="font-weight: 600;">₹{{ item.subtotal }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Address -->
+                <div class="checkout-section">
+                    <h3>📍 Delivery Address</h3>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="full_name" value="{{ request.POST.full_name }}" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" value="{{ request.POST.phone }}" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea name="address_line" rows="2" placeholder="House no, Street, Area" required>{{ request.POST.address_line }}</textarea>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" name="city" value="{{ request.POST.city }}" placeholder="City" required>
+                        </div>
+                        <div class="form-group">
+                            <label>State</label>
+                            <input type="text" name="state" value="{{ request.POST.state }}" placeholder="State" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Pincode</label>
+                            <input type="text" name="pincode" value="{{ request.POST.pincode }}" placeholder="Pincode" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="checkout-section">
+                    <h3>💳 Payment Method</h3>
+                    <div class="payment-options">
+                        {% for value, label in payment_methods %}
+                        <label class="payment-option">
+                            <input type="radio" name="payment_method" value="{{ value }}" {% if request.POST.payment_method == value %}checked{% endif %} required>
+                            <span class="payment-icon">
+                                {% if 'Google' in label %}🟢
+                                {% elif 'Cred' in label %}💳
+                                {% elif 'Amazon' in label %}📦
+                                {% elif 'PhonePe' in label %}🟣
+                                {% elif 'Paytm' in label %}🔵
+                                {% elif 'BHIM' in label %}🟠
+                                {% elif 'Credit' in label %}💳
+                                {% elif 'Debit' in label %}💳
+                                {% elif 'Net' in label %}🏦
+                                {% elif 'Cash' in label %}💵
+                                {% else %}💳{% endif %}
+                            </span>
+                            <span>{{ label }}</span>
+                        </label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Bill Summary + Coupons -->
+            <div>
+                <div class="bill-summary">
+                    <h3>Bill Details</h3>
+                    <div class="bill-row">
+                        <span>Items Total</span>
+                        <span>₹{{ items_total|floatformat:2 }}</span>
+                    </div>
+                    <div class="bill-row">
+                        <span>Delivery Charge</span>
+                        <span>₹{{ delivery_charge|floatformat:2 }}</span>
+                    </div>
+                    <div class="bill-row">
+                        <span>Handling Charge</span>
+                        <span>₹{{ handling_charge|floatformat:2 }}</span>
+                    </div>
+                    {% if applied_coupon %}
+                    <div class="bill-row discount">
+                        <span>Coupon Discount ({{ applied_coupon.code }})</span>
+                        <span>- ₹{{ discount|floatformat:2 }}</span>
+                    </div>
+                    {% endif %}
+                    <div class="bill-row total">
+                        <span>Grand Total</span>
+                        <span>₹{{ grand_total|floatformat:2 }}</span>
+                    </div>
+
+                    <!-- Coupons -->
+                    <div class="coupon-section">
+                        <h4>🎟️ Available Coupons</h4>
+                        <div class="coupon-list">
+                            {% for coupon in coupons %}
+                            <div class="coupon-item">
+                                <div>
+                                    <span class="coupon-code">{{ coupon.code }}</span>
+                                    <span style="margin-left:8px;color:#555;">
+                                        {% if coupon.discount_percent %}{{ coupon.discount_percent|floatformat }}% off{% endif %}
+                                        {% if coupon.discount_amount %}₹{{ coupon.discount_amount|floatformat }} off{% endif %}
+                                        {% if coupon.min_order_amount %} (Min ₹{{ coupon.min_order_amount|floatformat }}){% endif %}
+                                    </span>
+                                </div>
+                            </div>
+                            {% empty %}
+                            <p style="font-size:0.85rem;color:#888;">No coupons available</p>
+                            {% endfor %}
+                        </div>
+                        <div class="coupon-input">
+                            <input type="text" name="coupon_code" placeholder="Enter coupon code" value="{{ request.POST.coupon_code }}">
+                            <button type="submit" name="apply_coupon" class="btn btn-yellow" style="padding:8px 14px;">Apply</button>
+                        </div>
+                        {% if applied_coupon %}
+                        <p style="color: var(--green-dark); margin-top: 8px; font-size: 0.85rem;">✓ Coupon {{ applied_coupon.code }} applied! Discount: ₹{{ discount|floatformat:2 }}</p>
+                        {% endif %}
+                    </div>
+
+                    <button type="submit" name="place_order" class="btn btn-purple btn-block" style="margin-top: 20px;">Pay ₹{{ grand_total|floatformat:2 }} & Place Order</button>
+                    <p style="text-align:center; font-size:0.8rem; color:#888; margin-top:10px;">🔒 Secure payment | Your details are safe</p>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Highlight selected payment option
+    document.querySelectorAll('.payment-option input[type="radio"]').forEach(function(radio) {
+        radio.addEventListener('change', function() {
+            document.querySelectorAll('.payment-option').forEach(function(opt) {
+                opt.classList.remove('selected');
+            });
+            this.closest('.payment-option').classList.add('selected');
+        });
+    });
+</script>
+{% endblock %}

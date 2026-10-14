@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}All Products - VegFruit Store{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="section-title">All Products in Stock</h2>
+
+    <!-- Category quick links -->
+    <div style="margin-bottom: 30px; display: flex; flex-wrap: wrap; gap: 8px;">
+        <a href="{% url 'products:product_list' %}" class="btn btn-purple" style="padding:6px 14px;font-size:0.85rem;">All</a>
+        {% for cat in categories %}
+        <a href="{% url 'products:category_products' cat.slug %}" class="btn btn-outline" style="padding:6px 14px;font-size:0.85rem;">{{ cat.name }}</a>
+        {% endfor %}
+    </div>
+
+    {% if products %}
+    <div class="product-grid">
+        {% for product in products %}
+        <div class="product-card">
+            <div class="product-image">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% else %}
+                    {% if 'vegetable' in product.category.slug %}🥕
+                    {% elif 'fruit' in product.category.slug %}🍎
+                    {% elif 'exotic' in product.category.slug %}🥝
+                    {% elif 'leafy' in product.category.slug %}🥬
+                    {% elif 'sprout' in product.category.slug %}🌱
+                    {% elif 'organic' in product.category.slug %}🌿
+                    {% elif 'seasonal' in product.category.slug %}🍂
+                    {% elif 'frozen' in product.category.slug %}🧊
+                    {% else %}🛒{% endif %}
+                {% endif %}
+            </div>
+            <div class="product-info">
+                <span class="product-category">{{ product.category.name }}</span>
+                <h3 class="product-name">
+                    {{ product.name }}
+                    {% if product.is_organic %}<span class="organic-badge">Organic</span>{% endif %}
+                </h3>
+                <div class="product-price">₹{{ product.price }} <span class="unit">/ {{ product.unit }}</span></div>
+                <form action="{% url 'cart:add_to_cart' product.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-primary btn-block">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">
+        <div class="icon">📦</div>
+        <h3>No products available</h3>
+        <p>Please check back later for fresh stock.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

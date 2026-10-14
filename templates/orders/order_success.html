@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Order Placed Successfully - VegFruit Store{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="success-container">
+        <div class="smiley">😊</div>
+        <h1>Order Placed Successfully!</h1>
+        <p style="color: #555; margin-top: 10px;">Thank you for shopping with us. Your fresh vegetables and fruits are on the way!</p>
+
+        <div class="order-id">Order #{{ order.id }}</div>
+
+        <div class="order-details">
+            <h4>Order Summary</h4>
+            {% for item in order_items %}
+            <div style="display: flex; justify-content: space-between; padding: 6px 0;">
+                <span>{{ item.product_name }} x {{ item.quantity }}</span>
+                <span>₹{{ item.subtotal }}</span>
+            </div>
+            {% endfor %}
+            <hr style="margin: 12px 0;">
+            <div style="display: flex; justify-content: space-between; padding: 4px 0;">
+                <span>Items Total</span>
+                <span>₹{{ order.items_total }}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 4px 0;">
+                <span>Delivery Charge</span>
+                <span>₹{{ order.delivery_charge }}</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 4px 0;">
+                <span>Handling Charge</span>
+                <span>₹{{ order.handling_charge }}</span>
+            </div>
+            {% if order.discount > 0 %}
+            <div style="display: flex; justify-content: space-between; padding: 4px 0; color: var(--green-dark);">
+                <span>Discount</span>
+                <span>- ₹{{ order.discount }}</span>
+            </div>
+            {% endif %}
+            <div style="display: flex; justify-content: space-between; padding: 8px 0; font-weight: 700; font-size: 1.1rem; color: var(--purple-dark); border-top: 2px solid var(--gray-light); margin-top: 8px;">
+                <span>Grand Total</span>
+                <span>₹{{ order.grand_total }}</span>
+            </div>
+        </div>
+
+        <div style="text-align: left; background: var(--light-bg); padding: 16px; border-radius: 8px; margin-bottom: 20px;">
+            <strong>Payment Method:</strong> {{ order.payment_method }}<br>
+            <strong>Payment Status:</strong> <span style="color: var(--green-dark); font-weight: 600;">{{ order.payment_status }}</span><br>
+            <strong>Delivery Address:</strong> {{ order.address.full_name }}, {{ order.address.address_line }}, {{ order.address.city }}, {{ order.address.state }} - {{ order.address.pincode }}
+        </div>
+
+        <a href="{% url 'products:home' %}" class="btn btn-yellow">Continue Shopping</a>
+        <a href="{% url 'products:product_list' %}" class="btn btn-primary" style="margin-left: 8px;">View Products</a>
+    </div>
+</div>
+{% endblock %}

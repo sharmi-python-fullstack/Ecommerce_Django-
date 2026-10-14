@@ -1,0 +1,1250 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$JZMBdgOEoLy87yGUuZ7g5x$cj3uV2RLfO6107kXobm4GMj1RIRTfUBJG/8vp+wy2Og=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@vegfruit.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-10-14T13:43:25.854Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$rqShwwgX8Dzh7tO5g8uclu$aC9cpgtAmjLv+MGtTTspRW8xjgNdcVRLsNxcrzaO3a4=",
+    "last_login": "2026-10-14T16:43:22.299Z",
+    "is_superuser": false,
+    "username": "sharmi",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-10-14T16:43:20.880Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "7q5gee1aypgf9bl4qj1saqiezhnqkwxx",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hChBQaX7nsGMjNMpWpoUtqV8e7apAvd_vfef6mE21rS1mRJU1YXZdXpdyPkh9Qd5DvW26x5rusykd4VfdCmhznL83q4fwcFW_nW6CU6iSyu8xzOo-0YEPvAwZEBTxQB2YzocmfJG-LoYuwFQQB6CKDeH_j-OCg:1xH24Y:kF8B0BcxgykMDcab28S66TNql3SInwtssal9Osd1faw",
+    "expire_date": "2026-10-28T16:43:22.312Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "pmrsh33b5s9nbwhc5blnjshuhav6x106",
+  "fields": {
+    "session_data": "e30:1xGzHq:tKzJw9ey5zsoeR7dYqVfyaQ5LqOS75IpxHQ0WehUum4",
+    "expire_date": "2026-10-28T13:44:54.911Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 1,
+  "fields": {
+    "name": "Fresh Vegetables",
+    "slug": "fresh-vegetables",
+    "image": ""
+  }
+},
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "name": "Fresh Fruits",
+    "slug": "fresh-fruits",
+    "image": ""
+  }
+},
+{
+  "model": "products.category",
+  "pk": 3,
+  "fields": {
+    "name": "Exotics",
+    "slug": "exotics",
+    "image": ""
+  }
+},
+{
+  "model": "products.category",
+  "pk": 4,
+  "fields": {
+    "name": "Green Leafy Veggies",
+    "slug": "green-leafy-veggies",
+    "image": ""
+  }
+},
+{
+  "model": "products.category",
+  "pk": 5,
+  "fields": {
+    "name": "Sprouts",
+    "slug": "sprouts",
+    "image": ""
+  }
+},
+{
+  "model": "products.category",
+  "pk": 6,
+  "fields": {
+    "name": "Organics",
+    "slug": "organics",
+    "image": ""
+  }
+},
+{
+  "model": "products.category",
+  "pk": 7,
+  "fields": {
+    "name": "Seasonal",
+    "slug": "seasonal",
+    "image": ""
+  }
+},
+{
+  "model": "products.category",
+  "pk": 8,
+  "fields": {
+    "name": "Frozen Veggies",
+    "slug": "frozen-veggies",
+    "image": ""
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "name": "Tomato",
+    "slug": "tomato",
+    "category": 1,
+    "description": "Farm fresh red tomatoes, juicy and ripe.",
+    "price": "40.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.022Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "name": "Onion",
+    "slug": "onion",
+    "category": 1,
+    "description": "Fresh pink onions, essential for every kitchen.",
+    "price": "35.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.028Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "name": "Potato",
+    "slug": "potato",
+    "category": 1,
+    "description": "High quality potatoes, perfect for all dishes.",
+    "price": "30.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.036Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "name": "Carrot",
+    "slug": "carrot",
+    "category": 1,
+    "description": "Crunchy orange carrots rich in vitamin A.",
+    "price": "45.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.042Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "name": "Capsicum",
+    "slug": "capsicum",
+    "category": 1,
+    "description": "Fresh green capsicums, crisp and flavorful.",
+    "price": "60.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.050Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 6,
+  "fields": {
+    "name": "Cucumber",
+    "slug": "cucumber",
+    "category": 1,
+    "description": "Cool and refreshing cucumbers.",
+    "price": "25.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.057Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 7,
+  "fields": {
+    "name": "Lady Finger (Okra)",
+    "slug": "lady-finger-okra",
+    "category": 1,
+    "description": "Tender okra, great for curries and fries.",
+    "price": "50.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.065Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 8,
+  "fields": {
+    "name": "Cauliflower",
+    "slug": "cauliflower",
+    "category": 1,
+    "description": "Fresh white cauliflower, firm and clean.",
+    "price": "55.00",
+    "unit": "pc",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.072Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 9,
+  "fields": {
+    "name": "Apple",
+    "slug": "apple",
+    "category": 2,
+    "description": "Crispy red apples, sweet and juicy.",
+    "price": "180.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.079Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 10,
+  "fields": {
+    "name": "Banana",
+    "slug": "banana",
+    "category": 2,
+    "description": "Fresh ripe bananas, rich in potassium.",
+    "price": "50.00",
+    "unit": "dozen",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.087Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 11,
+  "fields": {
+    "name": "Orange",
+    "slug": "orange",
+    "category": 2,
+    "description": "Juicy oranges loaded with vitamin C.",
+    "price": "80.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.093Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 12,
+  "fields": {
+    "name": "Mango",
+    "slug": "mango",
+    "category": 2,
+    "description": "Sweet and fragrant mangoes, king of fruits.",
+    "price": "120.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.103Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 13,
+  "fields": {
+    "name": "Grapes",
+    "slug": "grapes",
+    "category": 2,
+    "description": "Seedless green grapes, sweet and tangy.",
+    "price": "90.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.109Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 14,
+  "fields": {
+    "name": "Pomegranate",
+    "slug": "pomegranate",
+    "category": 2,
+    "description": "Fresh pomegranates with juicy red seeds.",
+    "price": "150.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.118Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 15,
+  "fields": {
+    "name": "Papaya",
+    "slug": "papaya",
+    "category": 2,
+    "description": "Ripe papaya, rich in antioxidants.",
+    "price": "60.00",
+    "unit": "pc",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.141Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 16,
+  "fields": {
+    "name": "Watermelon",
+    "slug": "watermelon",
+    "category": 2,
+    "description": "Refreshing watermelon, perfect for summer.",
+    "price": "40.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.150Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 17,
+  "fields": {
+    "name": "Avocado",
+    "slug": "avocado",
+    "category": 3,
+    "description": "Creamy and nutritious avocado.",
+    "price": "200.00",
+    "unit": "pc",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.156Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 18,
+  "fields": {
+    "name": "Blueberries",
+    "slug": "blueberries",
+    "category": 3,
+    "description": "Antioxidant-rich fresh blueberries.",
+    "price": "600.00",
+    "unit": "250g",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.161Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 19,
+  "fields": {
+    "name": "Dragon Fruit",
+    "slug": "dragon-fruit",
+    "category": 3,
+    "description": "Exotic dragon fruit with sweet mild flavor.",
+    "price": "180.00",
+    "unit": "pc",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.170Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 20,
+  "fields": {
+    "name": "Kiwi",
+    "slug": "kiwi",
+    "category": 3,
+    "description": "Tangy and vitamin-rich kiwis.",
+    "price": "160.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.175Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 21,
+  "fields": {
+    "name": "Cherries",
+    "slug": "cherries",
+    "category": 3,
+    "description": "Sweet and juicy red cherries.",
+    "price": "500.00",
+    "unit": "500g",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.183Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 22,
+  "fields": {
+    "name": "Litchi",
+    "slug": "litchi",
+    "category": 3,
+    "description": "Sweet and fragrant litchis.",
+    "price": "120.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.191Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 23,
+  "fields": {
+    "name": "Spinach (Palak)",
+    "slug": "spinach-palak",
+    "category": 4,
+    "description": "Fresh spinach leaves, rich in iron.",
+    "price": "30.00",
+    "unit": "bunch",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.198Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 24,
+  "fields": {
+    "name": "Coriander",
+    "slug": "coriander",
+    "category": 4,
+    "description": "Aromatic fresh coriander leaves.",
+    "price": "25.00",
+    "unit": "bunch",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.206Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 25,
+  "fields": {
+    "name": "Mint (Pudina)",
+    "slug": "mint-pudina",
+    "category": 4,
+    "description": "Refreshing fresh mint leaves.",
+    "price": "30.00",
+    "unit": "bunch",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.212Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 26,
+  "fields": {
+    "name": "Lettuce",
+    "slug": "lettuce",
+    "category": 4,
+    "description": "Crispy lettuce for salads.",
+    "price": "70.00",
+    "unit": "pc",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.220Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 27,
+  "fields": {
+    "name": "Fenugreek (Methi)",
+    "slug": "fenugreek-methi",
+    "category": 4,
+    "description": "Fresh fenugreek leaves, slightly bitter.",
+    "price": "35.00",
+    "unit": "bunch",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.226Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 28,
+  "fields": {
+    "name": "Amaranth (Chaulai)",
+    "slug": "amaranth-chaulai",
+    "category": 4,
+    "description": "Nutritious amaranth greens.",
+    "price": "30.00",
+    "unit": "bunch",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.233Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 29,
+  "fields": {
+    "name": "Moong Sprouts",
+    "slug": "moong-sprouts",
+    "category": 5,
+    "description": "Fresh and crunchy moong sprouts.",
+    "price": "60.00",
+    "unit": "500g",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.239Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 30,
+  "fields": {
+    "name": "Chana Sprouts",
+    "slug": "chana-sprouts",
+    "category": 5,
+    "description": "Protein-rich chickpea sprouts.",
+    "price": "55.00",
+    "unit": "500g",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.246Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 31,
+  "fields": {
+    "name": "Mixed Sprouts",
+    "slug": "mixed-sprouts",
+    "category": 5,
+    "description": "Nutritious mix of various sprouts.",
+    "price": "70.00",
+    "unit": "500g",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.253Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 32,
+  "fields": {
+    "name": "Alfalfa Sprouts",
+    "slug": "alfalfa-sprouts",
+    "category": 5,
+    "description": "Delicate and healthy alfalfa sprouts.",
+    "price": "80.00",
+    "unit": "200g",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:42:05.259Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 33,
+  "fields": {
+    "name": "Organic Tomato",
+    "slug": "organic-tomato",
+    "category": 6,
+    "description": "100% organic tomatoes, no chemicals.",
+    "price": "70.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": true,
+    "created_at": "2026-10-14T13:43:03.204Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 34,
+  "fields": {
+    "name": "Organic Onion",
+    "slug": "organic-onion",
+    "category": 6,
+    "description": "Certified organic onions.",
+    "price": "60.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": true,
+    "created_at": "2026-10-14T13:43:03.211Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 35,
+  "fields": {
+    "name": "Organic Potato",
+    "slug": "organic-potato",
+    "category": 6,
+    "description": "Organically grown potatoes.",
+    "price": "55.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": true,
+    "created_at": "2026-10-14T13:43:03.221Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 36,
+  "fields": {
+    "name": "Organic Spinach",
+    "slug": "organic-spinach",
+    "category": 6,
+    "description": "Pesticide-free organic spinach.",
+    "price": "50.00",
+    "unit": "bunch",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": true,
+    "created_at": "2026-10-14T13:43:03.229Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 37,
+  "fields": {
+    "name": "Organic Carrot",
+    "slug": "organic-carrot",
+    "category": 6,
+    "description": "Organic carrots, naturally sweet.",
+    "price": "80.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": true,
+    "created_at": "2026-10-14T13:43:03.237Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 38,
+  "fields": {
+    "name": "Organic Apple",
+    "slug": "organic-apple",
+    "category": 6,
+    "description": "Fresh organic apples.",
+    "price": "280.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": true,
+    "created_at": "2026-10-14T13:43:03.244Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 39,
+  "fields": {
+    "name": "Guava",
+    "slug": "guava",
+    "category": 7,
+    "description": "Seasonal sweet guavas.",
+    "price": "60.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:43:03.257Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 40,
+  "fields": {
+    "name": "Sapota (Chikoo)",
+    "slug": "sapota-chikoo",
+    "category": 7,
+    "description": "Sweet and soft seasonal sapota.",
+    "price": "70.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:43:03.268Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 41,
+  "fields": {
+    "name": "Pear",
+    "slug": "pear",
+    "category": 7,
+    "description": "Juicy seasonal pears.",
+    "price": "140.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:43:03.274Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 42,
+  "fields": {
+    "name": "Plum",
+    "slug": "plum",
+    "category": 7,
+    "description": "Tangy seasonal plums.",
+    "price": "100.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:43:03.285Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 43,
+  "fields": {
+    "name": "Jackfruit",
+    "slug": "jackfruit",
+    "category": 7,
+    "description": "Fresh seasonal jackfruit pieces.",
+    "price": "50.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:43:03.290Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 44,
+  "fields": {
+    "name": "Custard Apple",
+    "slug": "custard-apple",
+    "category": 7,
+    "description": "Sweet and creamy custard apples.",
+    "price": "150.00",
+    "unit": "kg",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:43:03.299Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 45,
+  "fields": {
+    "name": "Frozen Peas",
+    "slug": "frozen-peas",
+    "category": 8,
+    "description": "Quick-frozen sweet green peas.",
+    "price": "90.00",
+    "unit": "500g",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:43:03.305Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 46,
+  "fields": {
+    "name": "Frozen Corn",
+    "slug": "frozen-corn",
+    "category": 8,
+    "description": "Frozen sweet corn kernels.",
+    "price": "85.00",
+    "unit": "500g",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:43:03.332Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 47,
+  "fields": {
+    "name": "Frozen Mixed Veggies",
+    "slug": "frozen-mixed-veggies",
+    "category": 8,
+    "description": "Mix of carrots, beans, peas and corn.",
+    "price": "120.00",
+    "unit": "500g",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:43:03.338Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 48,
+  "fields": {
+    "name": "Frozen Baby Corn",
+    "slug": "frozen-baby-corn",
+    "category": 8,
+    "description": "Tender frozen baby corn.",
+    "price": "110.00",
+    "unit": "500g",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:43:03.344Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 49,
+  "fields": {
+    "name": "Frozen French Fries",
+    "slug": "frozen-french-fries",
+    "category": 8,
+    "description": "Crispy frozen french fries.",
+    "price": "100.00",
+    "unit": "500g",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:43:03.353Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 50,
+  "fields": {
+    "name": "Frozen Spinach",
+    "slug": "frozen-spinach",
+    "category": 8,
+    "description": "Flash-frozen spinach blocks.",
+    "price": "80.00",
+    "unit": "500g",
+    "image": "",
+    "in_stock": true,
+    "stock_quantity": 100,
+    "is_organic": false,
+    "created_at": "2026-10-14T13:43:03.358Z"
+  }
+},
+{
+  "model": "cart.cart",
+  "pk": 1,
+  "fields": {
+    "session_id": "pmrsh33b5s9nbwhc5blnjshuhav6x106",
+    "created_at": "2026-10-14T13:44:54.882Z",
+    "updated_at": "2026-10-14T13:44:54.882Z"
+  }
+},
+{
+  "model": "cart.cart",
+  "pk": 2,
+  "fields": {
+    "session_id": "i992508lvkw408cz5s3nhmwd0wyc7xw9",
+    "created_at": "2026-10-14T16:30:06.682Z",
+    "updated_at": "2026-10-14T16:30:06.682Z"
+  }
+},
+{
+  "model": "cart.cart",
+  "pk": 3,
+  "fields": {
+    "session_id": "7q5gee1aypgf9bl4qj1saqiezhnqkwxx",
+    "created_at": "2026-10-14T16:43:34.601Z",
+    "updated_at": "2026-10-14T16:43:34.601Z"
+  }
+},
+{
+  "model": "cart.cartitem",
+  "pk": 2,
+  "fields": {
+    "cart": 2,
+    "product": 28,
+    "quantity": 1
+  }
+},
+{
+  "model": "cart.cartitem",
+  "pk": 3,
+  "fields": {
+    "cart": 2,
+    "product": 9,
+    "quantity": 1
+  }
+},
+{
+  "model": "cart.cartitem",
+  "pk": 4,
+  "fields": {
+    "cart": 3,
+    "product": 10,
+    "quantity": 1
+  }
+},
+{
+  "model": "cart.cartitem",
+  "pk": 5,
+  "fields": {
+    "cart": 3,
+    "product": 9,
+    "quantity": 1
+  }
+},
+{
+  "model": "cart.cartitem",
+  "pk": 6,
+  "fields": {
+    "cart": 3,
+    "product": 13,
+    "quantity": 1
+  }
+},
+{
+  "model": "orders.coupon",
+  "pk": 1,
+  "fields": {
+    "code": "WELCOME10",
+    "description": "10% off on your first order",
+    "discount_percent": "10.00",
+    "discount_amount": "0.00",
+    "min_order_amount": "0.00",
+    "is_active": true,
+    "valid_from": null,
+    "valid_to": null
+  }
+},
+{
+  "model": "orders.coupon",
+  "pk": 2,
+  "fields": {
+    "code": "SAVE50",
+    "description": "Flat ₹50 off",
+    "discount_percent": "0.00",
+    "discount_amount": "50.00",
+    "min_order_amount": "300.00",
+    "is_active": true,
+    "valid_from": null,
+    "valid_to": null
+  }
+},
+{
+  "model": "orders.coupon",
+  "pk": 3,
+  "fields": {
+    "code": "FRESH20",
+    "description": "20% off above ₹500",
+    "discount_percent": "20.00",
+    "discount_amount": "0.00",
+    "min_order_amount": "500.00",
+    "is_active": true,
+    "valid_from": null,
+    "valid_to": null
+  }
+},
+{
+  "model": "orders.coupon",
+  "pk": 4,
+  "fields": {
+    "code": "VEGGIE100",
+    "description": "Flat ₹100 off above ₹700",
+    "discount_percent": "0.00",
+    "discount_amount": "100.00",
+    "min_order_amount": "700.00",
+    "is_active": true,
+    "valid_from": null,
+    "valid_to": null
+  }
+},
+{
+  "model": "orders.address",
+  "pk": 1,
+  "fields": {
+    "full_name": "John Doe",
+    "phone": "9876543210",
+    "address_line": "123 Green Street, MG Road",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "pincode": "560001",
+    "created_at": "2026-10-14T13:50:00.676Z"
+  }
+},
+{
+  "model": "orders.address",
+  "pk": 2,
+  "fields": {
+    "full_name": "sss",
+    "phone": "1234567889",
+    "address_line": "aaaa",
+    "city": "chennai",
+    "state": "tamilnadu",
+    "pincode": "352452",
+    "created_at": "2026-10-14T15:44:14.188Z"
+  }
+},
+{
+  "model": "orders.address",
+  "pk": 3,
+  "fields": {
+    "full_name": "dsgs",
+    "phone": "475676",
+    "address_line": "3463563563",
+    "city": "s",
+    "state": "fdhdf",
+    "pincode": "54654",
+    "created_at": "2026-10-14T16:33:56.492Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 1,
+  "fields": {
+    "cart": 1,
+    "address": 1,
+    "status": "Placed",
+    "items_total": "180.00",
+    "delivery_charge": "30.00",
+    "handling_charge": "10.00",
+    "coupon": 1,
+    "discount": "18.00",
+    "grand_total": "202.00",
+    "payment_method": "Google Pay",
+    "payment_status": "Paid",
+    "created_at": "2026-10-14T13:50:00.685Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 2,
+  "fields": {
+    "cart": 1,
+    "address": 2,
+    "status": "Placed",
+    "items_total": "320.00",
+    "delivery_charge": "30.00",
+    "handling_charge": "10.00",
+    "coupon": 1,
+    "discount": "32.00",
+    "grand_total": "328.00",
+    "payment_method": "Cash on Delivery",
+    "payment_status": "Paid",
+    "created_at": "2026-10-14T15:44:14.219Z"
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 3,
+  "fields": {
+    "cart": 2,
+    "address": 3,
+    "status": "Placed",
+    "items_total": "180.00",
+    "delivery_charge": "30.00",
+    "handling_charge": "10.00",
+    "coupon": null,
+    "discount": "0.00",
+    "grand_total": "220.00",
+    "payment_method": "Google Pay",
+    "payment_status": "Paid",
+    "created_at": "2026-10-14T16:33:56.520Z"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 1,
+  "fields": {
+    "order": 1,
+    "product_name": "Apple",
+    "product_price": "180.00",
+    "quantity": 1,
+    "subtotal": "180.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 2,
+  "fields": {
+    "order": 2,
+    "product_name": "Grapes",
+    "product_price": "90.00",
+    "quantity": 1,
+    "subtotal": "90.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 3,
+  "fields": {
+    "order": 2,
+    "product_name": "Frozen French Fries",
+    "product_price": "100.00",
+    "quantity": 2,
+    "subtotal": "200.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 4,
+  "fields": {
+    "order": 2,
+    "product_name": "Amaranth (Chaulai)",
+    "product_price": "30.00",
+    "quantity": 1,
+    "subtotal": "30.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 5,
+  "fields": {
+    "order": 3,
+    "product_name": "Apple",
+    "product_price": "180.00",
+    "quantity": 1,
+    "subtotal": "180.00"
+  }
+}
+]
