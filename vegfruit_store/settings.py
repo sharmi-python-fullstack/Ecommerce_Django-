@@ -35,6 +35,14 @@ DEBUG = env.bool("DEBUG", default=False)
 
 ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=[])
 CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=[])
+render_hostname = env("RENDER_EXTERNAL_HOSTNAME", default="")
+if render_hostname:
+    if render_hostname not in ALLOWED_HOSTS:
+        ALLOWED_HOSTS.append(render_hostname)
+
+    render_origin = f"https://{render_hostname}"
+    if render_origin not in CSRF_TRUSTED_ORIGINS:
+        CSRF_TRUSTED_ORIGINS.append(render_origin)
 
 
 # Application definition
@@ -90,12 +98,6 @@ WSGI_APPLICATION = 'vegfruit_store.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default' : {
-#         'ENGINE : 'django.db.backends.sqlite3',
-#         'NAME' : BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
     "default": dj_database_url.config(
         default=env("DATABASE_URL"),
