@@ -1,3 +1,6 @@
+from pathlib import Path
+
+from django.conf import settings
 from django.core.management.base import BaseCommand
 from products.models import Category, Product
 from orders.models import Coupon
@@ -29,6 +32,7 @@ class Command(BaseCommand):
             if created:
                 self.stdout.write(f'Created category: {cat["name"]}')
 
+        products_dir = Path(settings.MEDIA_ROOT) / "products"
         products_data = [
             # Fresh Vegetables
             ('Tomato', 'fresh-vegetables', 40.00, 'kg', 'Farm fresh red tomatoes, juicy and ripe.', False),
@@ -114,6 +118,28 @@ class Command(BaseCommand):
             )
             if created:
                 self.stdout.write(f'Created product: {name}')
+
+            if not product.image:
+                image_matches = (
+                    sorted(
+                        path
+                        for path in products_dir.iterdir()
+                        if path.is_file()
+                        and (path.stem == slug or path.stem.startswith(f"{slug}-"))
+                    )
+                    if products_dir.is_dir()
+                    else []
+                )
+                if len(image_matches) == 1:
+                    product.image.name = f"products/{image_matches[0].name}"
+                    product.save(update_fields=["image"])
+                    self.stdout.write(f'Added image for product: {name}')
+                else:
+                    self.stderr.write(
+                        self.style.WARNING(
+                            f'Could not find a unique image for product: {name}'
+                        )
+                    )
 
         # Coupons
         coupons_data = [
